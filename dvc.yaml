@@ -43,24 +43,17 @@ stages:
     - evaluation/importance.png
     - evaluation/plots/confusion_matrix.json:
         cache: false
-        template: confusion
-        x: actual
-        y: predicted
     - evaluation/plots/precision_recall.json:
         cache: false
-        x: recall
-        y: precision
     - evaluation/plots/roc.json:
         cache: false
-        x: fpr
-        y: tpr
   trainning_metrics:
-    cmd: python trainning_metrics.py
+    cmd: python src/trainning_metrics.py
     deps:
-    - trainning_metrics.py
+      - src/trainning_metrics.py
     metrics:
-    - training_metrics.json:
-        cache: false
+      - training_metrics.json:
+          cache: false
     plots:
-    - training_metrics/scalars:
-        cache: false
+      - training_metrics/scalars:
+          cache: false
