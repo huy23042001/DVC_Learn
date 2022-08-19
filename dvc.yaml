@@ -54,3 +54,13 @@ stages:
         cache: false
         x: fpr
         y: tpr
+  trainning_metrics:
+    cmd: python trainning_metrics.py
+    deps:
+    - trainning_metrics.py
+    metrics:
+    - training_metrics.json:
+        cache: false
+    plots:
+    - training_metrics/scalars:
+        cache: false
